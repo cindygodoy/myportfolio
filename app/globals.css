@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0F0A23;
+  color: #EAEAF0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: 0; padding: 0;
+}
+
+/* Font helpers */
+.font-crimson { font-family: "Crimson Text", Georgia, "Times New Roman", serif; }
+.font-inter   { font-family: "Inter", system-ui, -apple-system, sans-serif; }
+
+/* ── Glow backgrounds ── */
+.glow-hero {
+  position: absolute;
+  inset: 0;
+  top: -160px;
+  background: radial-gradient(ellipse 110% 80% at 50% 0%, rgba(123,97,255,0.32) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-section {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(123,97,255,0.14) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #0F0A23; }
+::-webkit-scrollbar-thumb { background: #7B61FF; border-radius: 4px; }
+
+::selection { background: rgba(123,97,255,0.35); color: #fff; }
+
+/* ── Responsive: stack two-col grids on mobile ── */
+@media (max-width: 768px) {
+  .grid-2col { grid-template-columns: 1fr !important; }
+  .grid-3col { grid-template-columns: 1fr !important; }
+  .hide-mobile { display: none !important; }
+  .full-card-inner { flex-direction: column !important; }
+  .full-card-phone { width: 100% !important; min-height: 220px !important; }
+  .cover-left { left: 20px !important; max-width: 200px !important; }
+  .cover-left h2 { font-size: 24px !important; }
+  .cover-phone { display: none !important; }
+}
