@@ -326,16 +326,16 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
                 position: "relative",
                 borderRadius: 20,
                 overflow: "hidden",
-                background: `url('/images/Gradient.png') center/cover no-repeat, linear-gradient(180deg, rgba(26,17,61,0.72) 0%, rgba(15,10,35,0.58) 100%)`,
-                border: "1px solid rgba(255,255,255,0.11)",
-                backdropFilter: "blur(22px)",
-                WebkitBackdropFilter: "blur(22px)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.18)",
+                background: `url('/images/Gradient.png') center/cover no-repeat, linear-gradient(180deg, rgba(26,17,61,0.22) 0%, rgba(15,10,35,0.18) 100%)`,
+                // border: "1px solid rgba(255,255,255,0.11)",
+                // backdropFilter: "blur(22px)",
+                // WebkitBackdropFilter: "blur(22px)",
+                // boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.18)",
                 aspectRatio: "987/500",
                 marginBottom: 32,
               }}
             >
-              <div
+              {/* <div
                 style={{
                   position: "absolute",
                   left: "50%",
@@ -349,41 +349,44 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
                   zIndex: 1,
                   pointerEvents: "none",
                 }}
-              />
-
-              <img
-                src="/images/UserFlow.png"
-                alt="Scratch Card user flow"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  opacity: 0.55,
-                  zIndex: 2,
-                  pointerEvents: "none",
-                }}
-              />
-
-              <img
-                src="/images/RASPADINHA MOCKUP.png"
-                alt="Scratch Card solution mockup"
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "38%",
-                  height: "88%",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  zIndex: 3,
-                  display: "block",
-                }}
-              />
-
+              /> */}
+                <img
+                  src="/images/UserFlow.png"
+                  alt="Scratch Card user flow"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    objectPosition: "0% center",
+                    opacity: 1,
+                    zIndex: 2,
+                    pointerEvents: "none",
+                  }}
+                />
+                <div style={{ borderRadius: 50, overflow: "hidden" }}>
+                  <video
+                    aria-label="Scratch Card Solution Video"
+                    src="/scratch-card.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      position: "absolute",
+                      left: "80%",
+                      top: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "38%",
+                      height: "88%",
+                      objectFit: "contain",
+                      objectPosition: "center",
+                      zIndex: 3,
+                      display: "block",
+                    }}
+                  />
+                </div>
               <img
                 src="/images/cindy-logo.png"
                 alt="Cindy Godoy logo"
