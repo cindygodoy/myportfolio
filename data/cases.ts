@@ -258,104 +258,133 @@ export const cases: Case[] = [
   },
   {
     slug: "event-commerce-redesign",
-    title: "Event Commerce Redesign",
-    tags: ["Fintech", "Multi-Platform", "Checkout"],
+    title: "Community Event Journey Redesign",
+    tags: ["White Label", "B2B2C", "Event Management"],
     description:
-      "Redesigned the end-to-end ticket purchasing journey across web and app, improving checkout conversion and creating a scalable UI for multi-event commerce under regulatory constraints.",
-    coverImage: "/images/event-commerce-cover.jpg",
+      "Redesigned the end-to-end event journey of a white-label platform used by churches, improving event discovery, registration, checkout and multi-platform usability across web and mobile experiences.",
+    coverImage: "/images/Inpeace-mockup-detailed.png",
     coverAlt: "Event commerce platform redesign",
     variant: "half",
     accentColor: "#CACAFB",
-    metrics: [
-      { value: "+22%", label: "checkout completion" },
-      { value: "4.8★", label: "app store rating post-launch" },
-      { value: "-30%", label: "support tickets on checkout" },
-    ],
+    metrics: [],
     context: {
-      left: "A high-growth ticketing platform needed to redesign its checkout flow to reduce abandonment and scale to support multiple event types and payment methods.",
+      left: "A white-label event platform used by churches needed a complete redesign of its event experience across web and mobile, restructuring discovery, registration and checkout to improve clarity and reduce friction.",
       right: [
-        "The existing checkout experience was built incrementally and had accumulated significant UX debt — long forms, unclear error states and no progress indication created anxiety and abandonment.",
-        "Research revealed that users were most likely to abandon during seat selection and payment — both areas with high cognitive load and insufficient contextual guidance.",
-        "The redesign needed to work within the constraints of an existing design system while introducing new patterns for seat maps, dynamic pricing and multi-ticket management.",
+        "The legacy experience had outdated interfaces and weak information hierarchy, making it difficult for users to understand critical event details such as date, location, modality and ticket availability.",
+        "All event content was concentrated inside a single text field without clear structure, forcing users to scan long blocks of information without distinction between schedule, requirements, policies or practical instructions.",
+        "The platform also lacked flexibility in key transactional moments: users couldn’t buy tickets for other participants, guest checkout was not supported, and payment flows became inconsistent due to different payment processors and validation requirements.",
       ],
     },
     challenges: [
       {
-        icon: "🗺",
-        title: "Seat Map Complexity",
+        icon: "⊞",
+        title: "Content Architecture",
         description:
-          "Design an intuitive, performant seat selection interface that works across event types and screen sizes without overwhelming users.",
+          "Transform an unstructured event page where all content lived in a single text field into a modular, scannable experience with clear hierarchy and decision-oriented information.",
+      },
+      {
+        icon: "↔",
+        title: "Registration Flexibility",
+        description:
+          "Redesign the registration flow to reduce friction by supporting guest checkout, multi-attendee purchases and persistent ticket visibility throughout the journey.",
       },
       {
         icon: "💳",
-        title: "Payment Trust",
+        title: "Payment Complexity",
         description:
-          "Rebuild user confidence in the payment flow through clearer progress indication, better error handling and transparent fee communication.",
-      },
-      {
-        icon: "⟳",
-        title: "Multi-ticket Logic",
-        description:
-          "Design a flexible cart system that handles multiple tickets, dynamic pricing, discount codes and group bookings in a single coherent flow.",
+          "Simplify a fragmented checkout experience shaped by multiple payment processors, translating backend constraints into a predictable and user-friendly payment flow.",
       },
     ],
     timelineSteps: [
-      { label: "Research" },
-      { label: "Benchmarks" },
-      { label: "Flows" },
-      { label: "Prototypes" },
-      { label: "Testing" },
+      { label: "Immersion" },
+      { label: "Audit" },
+      { label: "Redesign" },
+      { label: "Validation" },
+      { label: "Delivery" },
     ],
     processSections: [
       {
-        title: "User Research",
+        title: "Team Immersion & Product Context",
         paragraphs: [
-          "Ran moderated usability sessions with 8 participants and unmoderated tests with 50 users to map the emotional journey through checkout and identify pain points.",
-          "Benchmarked leading ticketing platforms globally — Ticketmaster, Eventbrite, DICE — to identify best practices and differentiation opportunities.",
+          "Started with an immersion process alongside the product team to understand the platform context, business rules, church operations and technical constraints behind the event journey.",
+          "This step helped clarify how the white-label model affected both sides of the experience: churches needed flexibility to publish different event formats, while attendees needed a clearer and more predictable path to registration.",
         ],
       },
       {
-        title: "Checkout Redesign",
+        title: "Heuristic Analysis & Current Experience Audit",
         paragraphs: [
-          "Redesigned the checkout as a multi-step flow with persistent progress indicators, reducing the perceived complexity of the purchase process.",
-          "Introduced inline validation, contextual help tooltips and proactive error messaging to significantly reduce form abandonment at critical input stages.",
+          "Reviewed the legacy web and mobile interfaces through a heuristic lens, mapping usability issues related to visibility, information hierarchy, consistency, error prevention and user control.",
+          "The audit revealed that critical event information was hard to scan, tickets were not visible enough during the decision journey, and checkout concentrated too much complexity in a single flow.",
+        ],
+      },
+      {
+        title: "Research and Data Immersion",
+        paragraphs: [
+          "Analyzed existing research findings and internal product insights to understand recurring user pain points, operational issues and behavior patterns already identified by the team.",
+          "These insights helped prioritize the redesign around clarity, trust and conversion: making event information easier to understand, reducing login friction and supporting more flexible purchase scenarios.",
+        ],
+      },
+      {
+        title: "Redesign & Journey Restructuring",
+        paragraphs: [
+          "Redesigned the event detail page into modular sections, separating description, schedule, practical information, age rating, FAQ, organizer details and policies instead of relying on a single unstructured text field.",
+          "The checkout was restructured into a step-based flow with persistent order context, multi-attendee support, guest checkout and clearer payment selection across different payment methods and processors.",
+        ],
+      },
+      {
+        title: "Validation & Handoff",
+        paragraphs: [
+          "Validated the new flows with stakeholders and product teams, reviewing edge cases related to event formats, ticket types, payment methods, guest users and responsive behavior.",
+          "Delivered the final redesign with structured flows, responsive interface specifications and clearer content guidelines to support a more scalable white-label event experience.",
         ],
       },
     ],
     quote: {
-      text: "The moment a user hesitates in a checkout flow, you've already lost them. Every interaction needs to reinforce trust and forward momentum.",
-      attribution: "— UX Research Finding",
+      text: "When event information is unclear, users hesitate before registering. The redesign focused on making the journey more transparent, flexible and trustworthy from discovery to checkout.",
+      attribution: "— Design Direction",
     },
     solutionTitle: "Solution",
     solutionContent: [
       {
-        title: "Progressive Disclosure",
+        title: "Clear Event Communication",
         paragraphs: [
-          "Broke the checkout into clear, manageable steps with a persistent progress bar — reducing cognitive load and giving users a clear sense of how far they were from completion.",
+          "Reorganized the event detail page to surface essential information earlier, including date, location, event format, modality and ticket availability.",
         ],
       },
       {
-        title: "Trust Signals",
+        title: "Flexible Registration & Checkout",
         paragraphs: [
-          "Added security badges, transparent fee breakdowns and clear cancellation policies at the payment stage — directly addressing the anxiety triggers identified in research.",
+          "Introduced a more flexible registration flow that allowed users to buy tickets for other people and complete checkout without being forced to log in at the beginning of the journey.",
+        ],
+      },
+      {
+        title: "Scalable Visual Guidelines",
+        paragraphs: [
+          "Defined clearer visual and content guidelines so event images, descriptions and ticket information could adapt more consistently across different event formats and screen sizes.",
+        ],
+      },
+      {
+        title: "Guided Payment Completion",
+        paragraphs: [
+          "Redesigned the Pix payment flow as a guided confirmation step, with clearer hierarchy, QR code visibility, copy-code action and step-by-step instructions to help users complete payment outside the platform.",
         ],
       },
     ],
     learningArtifacts: [
       {
-        title: "Anxiety mapping",
+        title: "Clarity before conversion",
         description:
-          "Mapping emotional states through the checkout journey revealed that anxiety peaks at payment — a critical insight that shaped the entire trust-building strategy.",
+          "Users need to understand what an event is, where it happens, when it happens and how participation works before they feel confident enough to register.",
       },
       {
-        title: "Inline validation",
+        title: "Flexibility in white-label products",
         description:
-          "Real-time form validation reduced error-related abandonment by giving users immediate feedback before they tried to progress to the next step.",
+          "White-label platforms need patterns that are structured enough to scale, but flexible enough to support different organizations, event formats and operational constraints.",
       },
       {
-        title: "Progressive trust",
+        title: "Checkout depends on invisible systems",
         description:
-          "Layering trust signals progressively — starting from product page through to payment confirmation — created a continuous reassurance narrative.",
+          "Payment processors and backend rules directly shape UX decisions, especially when different providers require different fields, validation and form behavior.",
       },
     ],
   },

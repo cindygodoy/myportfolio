@@ -46,6 +46,10 @@ function Card({ children, style = {} }: { children: React.ReactNode; style?: Rea
 interface Props { caseData: Case; otherCases: Case[]; }
 
 export default function CaseDetailClient({ caseData, otherCases }: Props) {
+  const isScratchCase = caseData.slug.toLowerCase().includes("scratch");
+  const heroMockupImage = isScratchCase
+    ? "/images/RASPADINHA MOCKUP.png"
+    : caseData.coverImage;
   return (
     <>
       {/* ── HERO ── */}
@@ -119,10 +123,10 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
             <div
               style={{
                 position: "absolute",
-                right: 44,
-                bottom: 0,
-                width: 460,
-                height: 640,
+               right: 44,
+bottom: 0,
+width: 460,
+height: 640,
                 zIndex: 2,
                 display: "flex",
                 alignItems: "flex-end",
@@ -130,8 +134,8 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
               }}
             >
               <img
-                src="/images/RASPADINHA MOCKUP.png"
-                alt="Scratch Card mockup"
+                src={heroMockupImage}
+                alt={caseData.title}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -218,7 +222,11 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
                   <Card style={{ padding: 32, height: "100%" }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(123,97,255,0.1)", border: "1px solid rgba(123,97,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                       <img
-                        src={["/assets/heart.svg", "/assets/Brain.svg", "/assets/fire.svg"][i]}
+                        src={
+                          caseData.slug === "event-commerce-redesign"
+                            ? ["/assets/Layout.svg", "/assets/UserPlus.svg", "/assets/CreditCard.svg"][i]
+                            : ["/assets/heart.svg", "/assets/Brain.svg", "/assets/fire.svg"][i]
+                        }
                         alt={ch.title}
                         style={{
                           width: 20,
@@ -351,38 +359,126 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
                 }}
               />
 
-              <img
-                src="/images/UserFlow.png"
-                alt="Scratch Card user flow"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  opacity: 0.55,
-                  zIndex: 2,
-                  pointerEvents: "none",
-                }}
-              />
+              {caseData.slug.toLowerCase().includes("scratch") && (
+                <img
+                  src="/images/UserFlow.png"
+                  alt="Scratch Card user flow"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                    opacity: 0.55,
+                    zIndex: 2,
+                    pointerEvents: "none",
+                  }}
+                />
+              )}
 
-              <img
-                src="/images/RASPADINHA MOCKUP.png"
-                alt="Scratch Card solution mockup"
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "38%",
-                  height: "88%",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  zIndex: 3,
-                  display: "block",
-                }}
-              />
+              {caseData.slug === "scratch-card" ? (
+                <video
+                  src="/Scratchcard-Experience.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "38%",
+                    height: "88%",
+                    objectFit: "contain",
+                    zIndex: 3,
+                    display: "block",
+                    borderRadius: 24,
+                  }}
+                />
+              ) : caseData.slug === "event-commerce-redesign" ? (
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 18,
+                    padding: "0 28px",
+                    zIndex: 3,
+                  }}
+                >
+                  {[
+                    "/images/Inpeace-mockup-detailed.png",
+                    "/images/inpeace-event-detail.png",
+                    "/images/Inpeace-filtro.png",
+                    "/images/Inpeace-checkout.png",
+                    "/images/Inpeace-checkout-pix.png",
+                  ].map((src, index) => (
+                    <div
+                      key={src}
+                      style={{
+                        width: "18%",
+                        height: "82%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        gap: 12,
+                      }}
+                    >
+                      <p
+                        className="font-inter"
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 500,
+                          color: "rgba(234,234,240,0.72)",
+                          textAlign: "center",
+                          minHeight: 32,
+                        }}
+                      >
+                        {[
+                          "Discover events",
+                          "Review event details",
+                          "Filter by category",
+                          "Choose payment method",
+                          "Complete with Pix",
+                        ][index]}
+                      </p>
+
+                      <img
+                        src={src}
+                        alt={`Event commerce screen ${index + 1}`}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          borderRadius: 18,
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <img
+                  src={caseData.coverImage}
+                  alt={caseData.title}
+                  style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "38%",
+                    height: "88%",
+                    objectFit: "contain",
+                    objectPosition: "center",
+                    zIndex: 3,
+                    display: "block",
+                  }}
+                />
+              )}
 
               <img
                 src="/images/cindy-logo.png"

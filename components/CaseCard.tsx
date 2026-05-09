@@ -158,7 +158,7 @@ function PhoneMock({ slug, size, hovered }: { slug: string; size: "md" | "lg"; h
   const mockups: Record<string, string> = {
     "scratch-card": "/images/RASPADINHA MOCKUP.png",
     "igaming-product-evolution": "/images/EB MOCKUP.png",
-    "event-commerce-redesign": "/images/INPEACE MOCKUP.png",
+    "event-commerce-redesign": "/images/inpeace-mockup.png",
   };
 
   return (
