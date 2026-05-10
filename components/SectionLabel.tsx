@@ -21,7 +21,7 @@ export default function SectionLabel({ label, icon = "✦", className = "" }: { 
           {label}
         </span>
         <img
-          src={label === "About me" ? "/assets/BAG.svg" : "/assets/SPARKLE.svg"}
+          src={label === "About me" ? "/assets/Bag.svg" : "/assets/Sparkle.svg"}
           alt={label}
           style={{
             width: 18,

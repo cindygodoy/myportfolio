@@ -334,31 +334,15 @@ height: 640,
                 position: "relative",
                 borderRadius: 20,
                 overflow: "hidden",
-                background: `url('/images/Gradient.png') center/cover no-repeat, linear-gradient(180deg, rgba(26,17,61,0.72) 0%, rgba(15,10,35,0.58) 100%)`,
-                border: "1px solid rgba(255,255,255,0.11)",
-                backdropFilter: "blur(22px)",
-                WebkitBackdropFilter: "blur(22px)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.18)",
+                background: `url('/images/Gradient.png') center/cover no-repeat, linear-gradient(180deg, rgba(26,17,61,0.22) 0%, rgba(15,10,35,0.18) 100%)`,
+                // border: "1px solid rgba(255,255,255,0.11)",
+                // backdropFilter: "blur(22px)",
+                // WebkitBackdropFilter: "blur(22px)",
+                // boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.18)",
                 aspectRatio: "987/500",
                 marginBottom: 32,
               }}
             >
-              <div
-                style={{
-                  position: "absolute",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: 520,
-                  height: 520,
-                  borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(123,97,255,0.30) 0%, rgba(123,97,255,0.12) 38%, transparent 70%)",
-                  filter: "blur(18px)",
-                  zIndex: 1,
-                  pointerEvents: "none",
-                }}
-              />
-
               {caseData.slug.toLowerCase().includes("scratch") && (
                 <img
                   src="/images/UserFlow.png"
@@ -479,7 +463,6 @@ height: 640,
                   }}
                 />
               )}
-
               <img
                 src="/images/cindy-logo.png"
                 alt="Cindy Godoy logo"
