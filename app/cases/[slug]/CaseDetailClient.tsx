@@ -113,10 +113,10 @@ export default function CaseDetailClient({ caseData, otherCases }: Props) {
                 <p className="font-inter" style={{ fontSize: 18, color: C.text }}>Product Designer</p>
 
                 <p className="font-inter" style={{ fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase", color: C.primary, fontWeight: 600 }}>Timeline</p>
-                <p className="font-inter" style={{ fontSize: 18, color: C.text }}>3 weeks</p>
+                <p className="font-inter" style={{ fontSize: 18, color: C.text }}>{caseData.timeline}</p>
 
                 <p className="font-inter" style={{ fontSize: 14, letterSpacing: "0.14em", textTransform: "uppercase", color: C.primary, fontWeight: 600 }}>Year</p>
-                <p className="font-inter" style={{ fontSize: 18, color: C.text }}>2026</p>
+                <p className="font-inter" style={{ fontSize: 18, color: C.text }}>2024</p>
               </div>
             </div>
             {/* Mockup */}
@@ -222,11 +222,7 @@ height: 640,
                   <Card style={{ padding: 32, height: "100%" }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(123,97,255,0.1)", border: "1px solid rgba(123,97,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                       <img
-                        src={
-                          caseData.slug === "event-commerce-redesign"
-                            ? ["/assets/Layout.svg", "/assets/UserPlus.svg", "/assets/CreditCard.svg"][i]
-                            : ["/assets/heart.svg", "/assets/Brain.svg", "/assets/fire.svg"][i]
-                        }
+                        src={ch.icon}
                         alt={ch.title}
                         style={{
                           width: 20,
@@ -445,6 +441,70 @@ height: 640,
                     </div>
                   ))}
                 </div>
+              ) : caseData.slug === "igaming-product-evolution" ? (
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 24,
+                    padding: "0 36px",
+                    zIndex: 3,
+                  }}
+                >
+                  {[
+                    "/images/EB-Registration.png",
+                    "/images/EB-Document.png",
+                    "/images/EB-Feedback.png",
+                    "/images/EB-Deposit.png",
+                    "/images/EB-Csino-Search.png",
+                  ].map((src, index) => (
+                    <div
+                      key={src}
+                      style={{
+                        width: "18%",
+                        height: "82%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        gap: 12,
+                      }}
+                    >
+                      <p
+                        className="font-inter"
+                        style={{
+                          fontSize: 13,
+                          fontWeight: 500,
+                          color: "rgba(234,234,240,0.72)",
+                          textAlign: "center",
+                          minHeight: 32,
+                        }}
+                      >
+                        {[
+                          "Registration",
+                          "KYC document",
+                          "Verification feedback",
+                          "Deposit flow",
+                          "Casino search",
+                        ][index]}
+                      </p>
+
+                      <img
+                        src={src}
+                        alt={`Betting product screen ${index + 1}`}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          borderRadius: 18,
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
               ) : (
                 <img
                   src={caseData.coverImage}
@@ -495,8 +555,17 @@ height: 640,
             <motion.h2 {...fade(0)} className="font-crimson" style={{ fontSize: 40, fontWeight: 600, color: C.text, marginBottom: 32 }}>Learning artifacts</motion.h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
               {caseData.learningArtifacts.map((a, i) => (
-                <motion.div key={a.title} {...fade(i * 0.08)}>
-                  <Card style={{ padding: 32 }}>
+                <motion.div key={a.title} {...fade(i * 0.08)} style={{ height: "100%" }}>
+                  <Card
+                    style={{
+                      padding: 32,
+                      minHeight: 360,
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-start",
+                    }}
+                  >
                     <h4 className="font-inter" style={{ fontSize: 17, fontWeight: 600, color: C.light, marginBottom: 10 }}>{a.title}</h4>
                     <p className="font-inter" style={{ fontSize: 14, color: C.muted, lineHeight: 1.75 }}>{a.description}</p>
                   </Card>

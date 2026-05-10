@@ -32,6 +32,8 @@ export type Case = {
   coverAlt: string;
   variant: "full" | "half";
   accentColor: string;
+  timeline: string;
+  year: string;
   metrics: CaseMetric[];
   context: {
     left: string;
@@ -60,6 +62,8 @@ export const cases: Case[] = [
     coverAlt: "Scratch Card mobile app screens",
     variant: "full",
     accentColor: "#7B61FF",
+    timeline: "3 weeks",
+    year: "2025",
     metrics: [
       { value: "R$625K", label: "generated in one day" },
       { value: "High NPS", label: "from repeat purchases" },
@@ -155,67 +159,84 @@ export const cases: Case[] = [
   },
   {
     slug: "igaming-product-evolution",
-    title: "iGaming Product Evolution",
+    title: "Betting Compliance & Mobile Evolution",
     tags: ["Fintech", "Multi-Platform", "Product Redesign"],
     description:
-      "Led product improvements across a regulated iGaming ecosystem focusing on behavioral design, complex user journeys, user funnels, app top-of-funnel and affiliate platform optimization.",
-    coverImage: "/images/igaming-cover.jpg",
+      "Designed critical product journeys for a regulated betting ecosystem, combining KYC compliance, mobile app foundations and usability testing to reduce friction while supporting business-critical flows.",
+    coverImage: "/images/EB-Home-App.png",
     coverAlt: "iGaming platform redesign screens",
     variant: "half",
     accentColor: "#CACAFB",
+    timeline: "4 months",
+    year: "2024",
     metrics: [
-      { value: "+34%", label: "conversion uplift" },
-      { value: "3.2x", label: "session depth increase" },
-      { value: "-18%", label: "drop-off reduction" },
+      { value: "400", label: "users tested" },
+      { value: "82%", label: "task success rate" },
+      { value: "49s", label: "avg. task completion" },
     ],
     context: {
-      left: "A leading iGaming operator needed to unify fragmented product experiences across web, iOS and Android while improving key funnel metrics.",
+      left:
+        "The Brazilian betting market entered a new regulatory phase, forcing platforms to redesign critical journeys to remain compliant while preserving conversion and trust.",
       right: [
-        "The platform had grown organically, resulting in inconsistent UI patterns and disjointed user journeys that impacted activation, retention and lifetime value.",
-        "Deep data analysis revealed critical drop-off points in the onboarding funnel and deposit flow — areas with direct revenue impact that required immediate design intervention.",
-        "The design challenge was to create a coherent system that could scale across multiple product lines while maintaining regulatory compliance across different jurisdictions.",
+        "KYC became mandatory as part of the new compliance framework, impacting onboarding, deposits and withdrawals.",
+        "The product team had to quickly adapt existing flows while aligning legal requirements, operational constraints and business goals.",
+        "At the same time, the ecosystem lacked a structured research culture, requiring usability validation to reduce friction and guide decisions.",
       ],
     },
     challenges: [
       {
-        icon: "⊞",
-        title: "Cross-Platform Consistency",
+        icon: "/assets/IdentificationCard.svg",
+        title: "Compliance Without Friction",
         description:
-          "Unify the experience across web, iOS and Android without compromising platform-specific conventions or performance characteristics.",
+          "Adapt critical onboarding and KYC journeys to new regulatory requirements without increasing friction or harming conversion rates.",
       },
       {
-        icon: "↑",
-        title: "Funnel Optimization",
+        icon: "/assets/Scales.svg",
+        title: "Research Under Pressure",
         description:
-          "Identify and resolve critical drop-off points in the activation and deposit flows to drive measurable conversion improvements.",
+          "Introduce research and usability validation practices in a product environment with little research culture and fast delivery expectations.",
       },
       {
-        icon: "⚙",
-        title: "Scalable System",
+        icon: "/assets/ShieldCheck.svg",
+        title: "Scalable Mobile Foundation",
         description:
-          "Build a component system that could accommodate new product lines, jurisdictions and regulatory requirements without design debt accumulation.",
+          "Design the mobile app foundation from scratch, structuring high-priority journeys like deposits, withdrawals, betting and identity verification.",
       },
     ],
     timelineSteps: [
-      { label: "Audit" },
+      { label: "Discovery" },
+      { label: "Compliance" },
       { label: "Research" },
-      { label: "Mapping" },
-      { label: "Prototyping" },
+      { label: "Validation" },
       { label: "Delivery" },
     ],
     processSections: [
       {
-        title: "Product Audit",
+        title: "Regulatory Discovery",
         paragraphs: [
-          "Conducted a comprehensive UX audit across all platforms, cataloguing 200+ screens and mapping 40+ user journeys to identify systemic inconsistencies.",
-          "Partnered with data analytics team to overlay behavioral metrics onto journey maps, revealing three critical drop-off points driving 60% of funnel abandonment.",
+          "Mapped the impact of Brazil’s new betting regulation across critical journeys, identifying where KYC requirements would affect onboarding, deposits and withdrawals.",
+          "Worked closely with legal, product and operational teams to translate compliance requirements into actionable product decisions without compromising conversion.",
         ],
       },
       {
-        title: "System Design",
+        title: "Flow Mapping & Prioritization",
         paragraphs: [
-          "Designed a scalable component library in Figma with clear governance rules, enabling the team to ship consistent UI at speed across multiple product streams.",
-          "Ran fortnightly design reviews and A/B test readouts to validate decisions with real user behavior data, iterating rapidly on high-impact flows.",
+          "Restructured the most critical user journeys — onboarding, deposits, withdrawals and identity verification — to reduce friction and improve task clarity.",
+          "Prioritized flows based on business impact and operational urgency, ensuring the most sensitive journeys were addressed first.",
+        ],
+      },
+      {
+        title: "Usability Testing & Validation",
+        paragraphs: [
+          "Introduced structured usability testing practices to validate new flows, measuring task success, completion time and friction points across key scenarios.",
+          "Insights from 400 users helped uncover navigation issues, comprehension gaps and moments of hesitation, directly informing design refinements.",
+        ],
+      },
+      {
+        title: "Iterative Refinement & Delivery",
+        paragraphs: [
+          "Refined high-priority flows based on testing evidence and stakeholder feedback, balancing regulatory requirements with business and UX goals.",
+          "Delivered scalable product journeys and mobile-first foundations ready for implementation across the regulated betting ecosystem.",
         ],
       },
     ],
@@ -226,33 +247,45 @@ export const cases: Case[] = [
     solutionTitle: "Solution",
     solutionContent: [
       {
-        title: "Unified Design Language",
+        title: "Compliance-Ready Onboarding",
         paragraphs: [
-          "Created a comprehensive design system with tokens for color, spacing, typography and motion — enabling consistent cross-platform delivery at speed.",
+          "Redesigned onboarding and identity verification flows to support new KYC requirements, reducing ambiguity while keeping the entry journey clear and conversion-oriented.",
         ],
       },
       {
-        title: "Funnel Redesign",
+        title: "Critical Money Flows",
         paragraphs: [
-          "Redesigned the activation and deposit flows with progressive disclosure patterns, reducing cognitive load and removing unnecessary friction points.",
+          "Restructured deposit and withdrawal journeys with clearer hierarchy, better guidance and stronger user confidence in high-stakes financial actions.",
+        ],
+      },
+      {
+        title: "Usability-Driven Refinements",
+        paragraphs: [
+          "Validated critical journeys through usability testing, identifying friction points and refining navigation, content clarity and action hierarchy.",
+        ],
+      },
+      {
+        title: "Mobile Product Foundation",
+        paragraphs: [
+          "Built foundational mobile journeys to support a scalable regulated betting ecosystem, establishing patterns for betting, account management and transactional flows.",
         ],
       },
     ],
     learningArtifacts: [
       {
-        title: "System thinking",
+        title: "Compliance as experience",
         description:
-          "Building for scale requires defining constraints early — the most impactful design decisions happen at the system level, not the screen level.",
+          "Regulatory requirements should not be treated only as constraints. When translated with clarity, they can become moments of trust and reassurance in the user journey.",
       },
       {
-        title: "Data-led design",
+        title: "Research under constraints",
         description:
-          "Combining qualitative research with quantitative behavioral data created a much stronger foundation for prioritizing design improvements.",
+          "Even in fast-moving environments, usability testing can reduce risk and help teams make better product decisions when timelines, legal requirements and business pressure are high.",
       },
       {
-        title: "Stakeholder alignment",
+        title: "Mobile-first foundations",
         description:
-          "Regular design reviews with cross-functional teams significantly reduced late-stage revisions and accelerated delivery velocity.",
+          "Designing a regulated betting app required scalable patterns that could support critical journeys such as KYC, deposits, withdrawals and betting without creating fragmented experiences.",
       },
     ],
   },
@@ -266,6 +299,8 @@ export const cases: Case[] = [
     coverAlt: "Event commerce platform redesign",
     variant: "half",
     accentColor: "#CACAFB",
+    timeline: "3 weeks",
+    year: "2024",
     metrics: [],
     context: {
       left: "A white-label event platform used by churches needed a complete redesign of its event experience across web and mobile, restructuring discovery, registration and checkout to improve clarity and reduce friction.",
