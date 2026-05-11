@@ -359,7 +359,7 @@ height: 640,
 
               {caseData.slug === "scratch-card" ? (
                 <video
-                  src="/Scratchcard-Experience.mp4"
+                  src="/scratch-card.mp4"
                   autoPlay
                   loop
                   muted

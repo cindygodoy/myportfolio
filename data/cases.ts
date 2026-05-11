@@ -79,19 +79,19 @@ export const cases: Case[] = [
     },
     challenges: [
       {
-        icon: "✦",
+        icon: "/assets/Heart.svg",
         title: "Emotional Translation",
         description:
           "Translate the physical scratch-card sensation into a digital experience that preserves the tactile thrill and instant gratification users expect.",
       },
       {
-        icon: "⟳",
+        icon: "/assets/Brain.svg",
         title: "Behavioral Loop",
         description:
           "Create a repeatable behavioral pattern that encourages users to re-engage with the product after each draw cycle, driving retention and repeat purchases.",
       },
       {
-        icon: "⚡",
+        icon: "/assets/Fire.svg",
         title: "Instant Feedback",
         description:
           "Design a 1:1 logic system that delivers immediate, personalized feedback at the moment of reveal — making every interaction feel unique and rewarding.",
