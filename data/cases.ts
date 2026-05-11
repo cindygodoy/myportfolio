@@ -185,19 +185,19 @@ export const cases: Case[] = [
     },
     challenges: [
       {
-        icon: "/assets/IdentificationCard.svg",
+        icon: "/assets/identification-card.svg",
         title: "Compliance Without Friction",
         description:
           "Adapt critical onboarding and KYC journeys to new regulatory requirements without increasing friction or harming conversion rates.",
       },
       {
-        icon: "/assets/Scales.svg",
+        icon: "/assets/scales.svg",
         title: "Research Under Pressure",
         description:
           "Introduce research and usability validation practices in a product environment with little research culture and fast delivery expectations.",
       },
       {
-        icon: "/assets/ShieldCheck.svg",
+        icon: "/assets/shield-check.svg",
         title: "Scalable Mobile Foundation",
         description:
           "Design the mobile app foundation from scratch, structuring high-priority journeys like deposits, withdrawals, betting and identity verification.",
@@ -312,19 +312,19 @@ export const cases: Case[] = [
     },
     challenges: [
       {
-        icon: "⊞",
+        icon: "/assets/Layout.svg",
         title: "Content Architecture",
         description:
           "Transform an unstructured event page where all content lived in a single text field into a modular, scannable experience with clear hierarchy and decision-oriented information.",
       },
       {
-        icon: "↔",
+        icon: "/assets/UserPlus.svg",
         title: "Registration Flexibility",
         description:
           "Redesign the registration flow to reduce friction by supporting guest checkout, multi-attendee purchases and persistent ticket visibility throughout the journey.",
       },
       {
-        icon: "💳",
+        icon: "/assets/CreditCard.svg",
         title: "Payment Complexity",
         description:
           "Simplify a fragmented checkout experience shaped by multiple payment processors, translating backend constraints into a predictable and user-friendly payment flow.",
